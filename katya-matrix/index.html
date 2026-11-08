@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="ru"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Матрица — разборы и самонаблюдение</title><meta name="description" content="Судьбу не предскажу. Помогу понять себя через символы Матрицы и ваш опыт."/><meta name="next-size-adjust" content=""/><style>/* [project]/node_modules/@fontsource/pt-sans/400.css [app-client] (css) */
+<!DOCTYPE html><html lang="ru"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Матрица — разборы и самонаблюдение</title><meta name="description" content="Судьбу не предскажу. Помогу понять себя через символы Матрицы и ваш опыт."/><meta name="next-size-adjust" content=""/><style>/* [project]/node_modules/.pnpm/@fontsource+pt-sans@5.3.0/node_modules/@fontsource/pt-sans/400.css [app-client] (css) */
 @font-face {
   font-family: PT Sans;
   font-style: normal;
@@ -35,7 +35,7 @@
   unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* [project]/node_modules/@fontsource/pt-sans/700.css [app-client] (css) */
+/* [project]/node_modules/.pnpm/@fontsource+pt-sans@5.3.0/node_modules/@fontsource/pt-sans/700.css [app-client] (css) */
 @font-face {
   font-family: PT Sans;
   font-style: normal;
@@ -72,7 +72,7 @@
   unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* [project]/node_modules/@fontsource/pt-serif/400.css [app-client] (css) */
+/* [project]/node_modules/.pnpm/@fontsource+pt-serif@5.3.0/node_modules/@fontsource/pt-serif/400.css [app-client] (css) */
 @font-face {
   font-family: PT Serif;
   font-style: normal;
@@ -1045,7 +1045,7 @@ a {
   }
 }
 
-/*# sourceMappingURL=_0vtlx1ri0v3wl._.css.map*//* [project]/app/lab/cloud/product-sets.css [app-client] (css) */
+/*# sourceMappingURL=_0m73317_v6zu7._.css.map*//* [project]/app/lab/cloud/product-sets.css [app-client] (css) */
 .organic-products {
   --organic-main: #ece3f4;
   --organic-text: #332940;
@@ -2649,6 +2649,10 @@ a {
   box-shadow: 0 28px 100px #19261c47;
 }
 
+.money-modal-money {
+  background: color-mix(in srgb,var(--money-tint) 10%,#fdfdfb);
+}
+
 .money-modal-prime {
   --money-ink: #4b2d3c;
   --money-muted: #6c5962;
@@ -2764,9 +2768,14 @@ a {
   line-height: 1.6;
 }
 
-.money-modal-header mark {
-  background: linear-gradient(transparent 65%, var(--money-highlight) 65% 94%, transparent 94%);
+.money-modal mark {
   color: inherit;
+  background: color-mix(in srgb, var(--money-highlight) 72%, white);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  border-radius: 0;
+  margin: 0 -.02em;
+  padding: .04em .14em .08em;
 }
 
 .money-modal-section {
@@ -2814,9 +2823,9 @@ a {
   content: "✓";
 }
 
-.money-modal-benefits strong {
+.money-modal-benefits mark {
   color: var(--money-ink);
-  font-weight: 550;
+  font-weight: inherit;
 }
 
 .money-modal-steps li {
@@ -2852,18 +2861,10 @@ a {
 .money-modal-summary {
   background: var(--money-tint);
   border-radius: 20px;
-  gap: 12px;
+  gap: 20px;
   margin-top: 28px;
   padding: 24px;
   display: grid;
-}
-
-.money-modal-purchase {
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px 24px;
-  display: flex;
 }
 
 .money-modal-price {
@@ -2871,7 +2872,7 @@ a {
   display: grid;
 }
 
-.money-modal-price span, .money-modal-format {
+.money-modal-price span {
   color: var(--money-ink);
   font-size: 14px;
   line-height: 1.5;
@@ -2880,7 +2881,12 @@ a {
 .money-modal-price strong {
   white-space: nowrap;
   font-size: 38px;
-  line-height: 1.1;
+  line-height: 1.18;
+}
+
+.money-modal-note {
+  max-width: 68ch;
+  margin: 0;
 }
 
 .money-modal-cta {
@@ -2889,8 +2895,10 @@ a {
   text-align: center;
   border-radius: 999px;
   justify-content: center;
+  justify-self: start;
   align-items: center;
   min-height: 48px;
+  margin-top: 0;
   padding: 8px 24px;
   font-size: 15px;
   font-weight: 600;
@@ -2899,6 +2907,12 @@ a {
 
 .money-modal-cta:hover {
   background: color-mix(in srgb, var(--money-accent) 85%, black);
+}
+
+.money-modal-support {
+  text-align: center;
+  margin: 0;
+  padding-top: 28px;
 }
 
 body:has(.money-modal[open]) {
@@ -2935,16 +2949,15 @@ body:has(.money-modal[open]) {
   }
 
   .money-modal-summary {
-    padding: 18px;
-  }
-
-  .money-modal-purchase {
-    flex-direction: column;
-    align-items: stretch;
+    padding: 20px;
   }
 
   .money-modal-price strong {
     font-size: 32px;
+  }
+
+  .money-modal-cta {
+    width: 100%;
   }
 }
 
@@ -6194,7 +6207,7 @@ body:has(.money-modal[open]) {
   background: #514666;
 }
 
-/* [project]/node_modules/@fontsource/pt-serif/700.css [app-client] (css) */
+/* [project]/node_modules/.pnpm/@fontsource+pt-serif@5.3.0/node_modules/@fontsource/pt-serif/700.css [app-client] (css) */
 @font-face {
   font-family: PT Serif;
   font-style: normal;
@@ -6231,7 +6244,7 @@ body:has(.money-modal[open]) {
   unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* [project]/node_modules/@fontsource/pt-serif/700-italic.css [app-client] (css) */
+/* [project]/node_modules/.pnpm/@fontsource+pt-serif@5.3.0/node_modules/@fontsource/pt-serif/700-italic.css [app-client] (css) */
 @font-face {
   font-family: PT Serif;
   font-style: italic;
@@ -6268,7 +6281,7 @@ body:has(.money-modal[open]) {
   unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* [project]/node_modules/@fontsource/cormorant-garamond/600.css [app-client] (css) */
+/* [project]/node_modules/.pnpm/@fontsource+cormorant-garamond@5.3.0/node_modules/@fontsource/cormorant-garamond/600.css [app-client] (css) */
 @font-face {
   font-family: Cormorant Garamond;
   font-style: normal;
@@ -6314,7 +6327,7 @@ body:has(.money-modal[open]) {
   unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* [project]/node_modules/@fontsource/cormorant-garamond/600-italic.css [app-client] (css) */
+/* [project]/node_modules/.pnpm/@fontsource+cormorant-garamond@5.3.0/node_modules/@fontsource/cormorant-garamond/600-italic.css [app-client] (css) */
 @font-face {
   font-family: Cormorant Garamond;
   font-style: italic;
@@ -6360,7 +6373,7 @@ body:has(.money-modal[open]) {
   unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* [project]/node_modules/@fontsource/cormorant-garamond/700.css [app-client] (css) */
+/* [project]/node_modules/.pnpm/@fontsource+cormorant-garamond@5.3.0/node_modules/@fontsource/cormorant-garamond/700.css [app-client] (css) */
 @font-face {
   font-family: Cormorant Garamond;
   font-style: normal;
@@ -6406,7 +6419,7 @@ body:has(.money-modal[open]) {
   unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* [project]/node_modules/@fontsource/cormorant-garamond/700-italic.css [app-client] (css) */
+/* [project]/node_modules/.pnpm/@fontsource+cormorant-garamond@5.3.0/node_modules/@fontsource/cormorant-garamond/700-italic.css [app-client] (css) */
 @font-face {
   font-family: Cormorant Garamond;
   font-style: italic;
@@ -11857,7 +11870,7 @@ body:has(.cloud-site[data-palette="vivid"]) {
   --row-inset: 28px;
   --zebra-gap: 32px;
   --zebra-card-pad: 32px;
-  --zebra-card-radius: 20px;
+  --zebra-card-radius: 42px;
   --zebra-h2: 32px;
   --zebra-card-title: 30px;
   --zebra-item-title: 22px;
@@ -12411,7 +12424,7 @@ body:has(.cloud-site[data-palette="vivid"]) {
 
 @media (max-width: 1100px) {
   .cloud-site[data-site-variant="b"][data-surface="zebra"] {
-    --zebra-art: 104px;
+    --zebra-art: 120px;
     --zebra-card-pad: 28px;
   }
 
@@ -12436,8 +12449,8 @@ body:has(.cloud-site[data-palette="vivid"]) {
     --zebra-pad: 24px;
     --zebra-gap: 20px;
     --zebra-card-pad: 20px;
-    --zebra-art: 56px;
-    --zebra-card-radius: 18px;
+    --zebra-art: 96px;
+    --zebra-card-radius: 42px;
   }
 
   .cloud-site[data-site-variant="b"][data-surface="zebra"] .cloud-process-steps {
@@ -12484,6 +12497,18 @@ body:has(.cloud-site[data-palette="vivid"]) {
 
   .cloud-site[data-surface="zebra"] .zebra-next-card :is(.zebra-next-action, .author-contact-button) {
     margin-top: 32px;
+  }
+}
+
+@media (max-width: 520px) {
+  .cloud-site[data-site-variant="b"][data-surface="zebra"] {
+    --zebra-art: 80px;
+  }
+}
+
+@media (max-width: 380px) {
+  .cloud-site[data-site-variant="b"][data-surface="zebra"] {
+    --zebra-art: 72px;
   }
 }
 
@@ -12535,6 +12560,13 @@ body:has(.cloud-site[data-palette="vivid"]) {
   background: #fff;
 }
 
+.cloud-site[data-surface="zebra"] .reviews-heading {
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  display: flex;
+}
+
 .cloud-site[data-surface="zebra"] .review {
   flex-direction: column;
   gap: 12px;
@@ -12544,9 +12576,9 @@ body:has(.cloud-site[data-palette="vivid"]) {
 }
 
 .cloud-site[data-surface="zebra"] .review header {
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
   display: flex;
 }
 
@@ -12557,6 +12589,12 @@ body:has(.cloud-site[data-palette="vivid"]) {
   color: var(--hero-ink);
   font-weight: 700;
   line-height: 1.15;
+}
+
+.cloud-site[data-surface="zebra"] .review header span {
+  font: 700 11px/1.3 var(--body-font);
+  letter-spacing: .07em;
+  color: var(--hero-action);
 }
 
 .cloud-site[data-surface="zebra"] .review time {
@@ -12603,9 +12641,9 @@ body:has(.cloud-site[data-palette="vivid"]) {
 }
 
 .cloud-site[data-surface="zebra"] .reviews-arrows {
+  flex: none;
   justify-content: flex-end;
   gap: 8px;
-  margin-top: 20px;
   display: flex;
 }
 
@@ -13337,6 +13375,7 @@ body:has(.cloud-site[data-palette="vivid"]) {
   }
 
   .cloud-site[data-surface="zebra"][data-hero="center"] .author-hero .author-hero-title {
+    white-space: normal;
     font-size: clamp(30px, 8.6vw, 40px);
   }
 
@@ -13403,19 +13442,21 @@ body:has(.cloud-site[data-palette="vivid"]) {
 @keyframes hero-develop {
   from {
     opacity: 0;
-    clip-path: inset(-10% 100% -10% -3%);
+    clip-path: inset(0 -3% 100%);
+    translate: 0 -12px;
   }
 
   to {
     opacity: 1;
-    clip-path: inset(-10% -3%);
+    clip-path: inset(0 -3% -10%);
+    translate: 0;
   }
 }
 
 @keyframes hero-appear {
   from {
     opacity: 0;
-    translate: 0 6px;
+    translate: 0 -10px;
   }
 
   to {
@@ -13433,16 +13474,20 @@ body:has(.cloud-site[data-palette="vivid"]) {
     animation: 12s ease-in-out infinite alternate hero-blue-drift;
   }
 
+  .cloud-main > .author-hero .cloud-hero-top {
+    animation: .42s ease-out backwards hero-appear;
+  }
+
   .cloud-main > .author-hero .author-hero-title {
-    animation: .72s ease-in-out backwards hero-develop;
+    animation: .82s cubic-bezier(.22, 1, .36, 1) 80ms backwards hero-develop;
   }
 
   .cloud-main > .author-hero :is(.cloud-hero-copy > p, .author-hero-description) {
-    animation: .52s ease-in-out .24s backwards hero-appear;
+    animation: .58s ease-out .34s backwards hero-appear;
   }
 
   .cloud-main > .author-hero .cloud-button {
-    animation: .48s ease-in-out .42s backwards hero-appear;
+    animation: .52s ease-out .5s backwards hero-appear;
   }
 
   .cloud-main > .author-hero .cloud-button:focus-visible {
@@ -13452,6 +13497,7 @@ body:has(.cloud-site[data-palette="vivid"]) {
 
 @media (max-width: 460px) {
   .cloud-site[data-scene] .cloud-main > .author-hero .cloud-hero-top {
+    flex-wrap: wrap;
     gap: 14px;
   }
 
@@ -13793,18 +13839,42 @@ body:has(.cloud-site[data-palette="vivid"]) {
 }
 
 .about-section[data-about="profile"] .about-principles {
-  border-top: 1px solid var(--zebra-rule);
+  border-top: 0;
   gap: 24px;
-  padding-top: 24px;
+  padding-top: 0;
 }
 
 .about-section[data-about="profile"] .about-quote {
-  border-left: 2px solid color-mix(in srgb,var(--about-tide),transparent 35%);
-  font: italic 600 clamp(20px,1.8vw,25px)/1.35 var(--display-font);
+  width: 100%;
+  max-width: none;
+  color: var(--hero-emphasis);
+  font: italic 600 17px/1.55 var(--display-font);
   text-wrap: pretty;
-  grid-column: 2;
-  margin: 0;
-  padding: 4px 0 4px 24px;
+  border: 0;
+  margin: 0 0 24px;
+  padding: 0;
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .about-section[data-about="profile"] .about-composition {
+    grid-template-columns: clamp(180px, 21vw, 220px) minmax(0, 1fr);
+    gap: 32px clamp(28px, 4vw, 48px);
+  }
+
+  .about-section[data-about="profile"] .about-portrait {
+    grid-area: 1 / 1;
+    align-self: center;
+    width: 100%;
+    max-width: 220px;
+  }
+
+  .about-section[data-about="profile"] .about-copy {
+    grid-area: 1 / 2;
+  }
+
+  .about-section[data-about="profile"] .about-principles {
+    grid-column: 1 / -1;
+  }
 }
 
 .about-section[data-about="letter"] .about-composition {
@@ -13990,13 +14060,8 @@ body:has(.cloud-site[data-palette="vivid"]) {
     width: 104px;
   }
 
-  .about-section[data-about="profile"] .about-principles {
+  .about-section[data-about="profile"] .about-principles, .about-section[data-about="profile"] .about-quote {
     grid-column: 1 / -1;
-  }
-
-  .about-section[data-about="profile"] .about-quote {
-    grid-column: 1 / -1;
-    padding-left: 18px;
   }
 
   .about-section[data-about="principles"] .about-composition {
@@ -14078,6 +14143,10 @@ body:has(.cloud-site[data-palette="vivid"]) {
 
   .about-section[data-about="profile"] .about-principles {
     margin-top: 4px;
+  }
+
+  .about-section[data-about="profile"] .about-quote {
+    margin: 0;
   }
 }
 
@@ -14163,10 +14232,18 @@ body:has(.cloud-site[data-palette="vivid"]) {
   color: inherit;
 }
 
+.cloud-site .closing-questions details .faq-answer {
+  padding: 0 calc(var(--row-inset) + 100px) 18px var(--faq-bleed);
+}
+
 .cloud-site .closing-questions details p {
   max-width: none;
-  padding: 0 calc(var(--row-inset) + 100px) 18px var(--faq-bleed);
   margin: 0;
+  padding: 0;
+}
+
+.cloud-site .closing-questions details p + p {
+  margin-top: 10px;
 }
 
 .closing-questions details[open] {
@@ -14178,7 +14255,7 @@ body:has(.cloud-site[data-palette="vivid"]) {
     margin-inline: calc(-1 * var(--faq-bleed));
   }
 
-  .closing-questions summary, .cloud-site .closing-questions details p {
+  .closing-questions summary, .cloud-site .closing-questions details .faq-answer {
     padding-inline-end: var(--faq-bleed);
   }
 
@@ -14278,6 +14355,12 @@ body:has(.cloud-site[data-palette="vivid"]) {
   margin-top: 8px;
 }
 
+.cloud-site .closing-copy .closing-lead {
+  color: var(--end-ink);
+  margin-top: 12px;
+  font-weight: 500;
+}
+
 .cloud-site[data-surface="zebra"] .closing-content .author-contact-button {
   background: var(--end-action);
   color: #fff;
@@ -14373,12 +14456,21 @@ body:has(.cloud-site[data-palette="vivid"]) {
 }
 
 .closing-footer[data-footer="imprint"] .closing-content {
-  grid-template-columns: .85fr 1.15fr auto;
-  display: grid;
+  padding-block: clamp(36px, 4vw, 56px);
+  display: block;
 }
 
-.closing-footer[data-footer="imprint"] .closing-content .closing-brand {
-  font-size: clamp(30px, 4vw, 56px);
+.closing-footer[data-footer="imprint"] .closing-copy {
+  text-align: left;
+  max-width: 760px;
+}
+
+.closing-contacts {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  display: flex;
 }
 
 .cloud-site[data-surface="zebra"] .closing-footer[data-footer="imprint"] .author-contact-button {
@@ -14387,7 +14479,7 @@ body:has(.cloud-site[data-palette="vivid"]) {
 }
 
 @media (max-width: 800px) {
-  .closing-footer[data-footer="guide"] .closing-content, .closing-footer[data-footer="imprint"] .closing-content {
+  .closing-footer[data-footer="guide"] .closing-content {
     flex-wrap: wrap;
     justify-content: flex-start;
     display: flex;
@@ -14438,6 +14530,16 @@ body:has(.cloud-site[data-palette="vivid"]) {
 }
 
 /* [project]/app/lab/cloud/form-review.css [app-client] (css) */
+.cloud-site-flow {
+  background: #fff;
+  padding: 40px;
+}
+
+.cloud-site-flow .cloud-form-shell {
+  border-radius: 40px;
+  min-height: calc(100svh - 80px);
+}
+
 .flow-stage-caption {
   display: none;
 }
@@ -14527,14 +14629,16 @@ body:has(.cloud-site[data-palette="vivid"]) {
   --form-card-radius: 28px;
   --form-control-height: 56px;
   color: var(--form-ink);
-  padding: 0;
+  background: #fff;
+  padding: 40px;
   font-family: PT Sans, Arial, sans-serif;
 }
 
 [data-form-base="b"] .cloud-form-shell {
   background: #f3f0f8;
+  border-radius: 40px;
   align-content: start;
-  min-height: 100svh;
+  min-height: calc(100svh - 80px);
   padding: 40px 24px 64px;
   overflow: clip;
 }
@@ -14960,6 +15064,19 @@ body:has(.cloud-site[data-palette="vivid"]) {
 }
 
 @media (max-width: 760px) {
+  .cloud-site-flow {
+    padding: 12px;
+  }
+
+  .cloud-site-flow .cloud-form-shell {
+    border-radius: 24px;
+    min-height: calc(100svh - 24px);
+  }
+
+  .cloud-site-flow .cloud-entry-stack {
+    min-height: calc(100svh - 48px);
+  }
+
   .form-variant-switch > span {
     display: none;
   }
@@ -14986,8 +15103,14 @@ body:has(.cloud-site[data-palette="vivid"]) {
     gap: 10px;
   }
 
+  [data-form-base="b"] .cloud-site-flow {
+    padding: 12px;
+  }
+
   [data-form-base="b"] .cloud-form-shell {
+    border-radius: 24px;
     place-items: start stretch;
+    min-height: calc(100svh - 24px);
     padding: 16px 12px 32px;
   }
 
@@ -15440,6 +15563,29 @@ body:has(.cloud-site[data-palette="vivid"]) {
   .cloud-site[data-site-variant="b"][data-surface="zebra"] .cloud-content-layer {
     --section-heading-gap: 24px;
   }
+
+  .cloud-site[data-site-variant="b"][data-surface="zebra"] .cloud-process-steps p {
+    max-width: none;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 760px) {
+  .cloud-site[data-site-variant="b"][data-surface="zebra"] .cloud-process-steps article {
+    grid-template-columns: minmax(140px, .34fr) minmax(0, 1fr);
+    align-items: start;
+    column-gap: 32px;
+    display: grid;
+  }
+
+  .cloud-site[data-site-variant="b"][data-surface="zebra"] .cloud-process-steps h3 {
+    margin: 0 0 0 8px;
+  }
+}
+
+@media (max-width: 560px) {
+  .cloud-site[data-site-variant="b"][data-surface="zebra"] .cloud-process-steps article {
+    display: block;
+  }
 }
 
 /* [project]/app/lab/cloud/hero-cycles.css [app-client] (css) */
@@ -15528,40 +15674,6 @@ body:has(.cloud-site[data-palette="vivid"]) {
   transition: transform .25s, box-shadow .25s;
 }
 
-.hero-doodles {
-  z-index: 0;
-  pointer-events: none;
-  color: #fff;
-  opacity: .46;
-  mix-blend-mode: soft-light;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  inset: 0;
-  -webkit-mask-image: radial-gradient(35% 34% at 50% 47%, #0000 0 60%, #000 100%);
-  mask-image: radial-gradient(35% 34% at 50% 47%, #0000 0 60%, #000 100%);
-}
-
-.hero-doodles-layer {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2.1px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  vector-effect: non-scaling-stroke;
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-.hero-doodles-layer circle {
-  fill: currentColor;
-  stroke: none;
-}
-
-.hero-doodles-layer .hero-doodle-bold {
-  stroke-width: 5px;
-}
-
 .cloud-hero-top, .cloud-hero-copy, .cloud-hero-art, .cloud-hero-bottom {
   z-index: 2;
   position: relative;
@@ -15627,36 +15739,6 @@ body:has(.cloud-site[data-palette="vivid"]) {
   }
 }
 
-@keyframes hero-doodles-drift-a {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) rotate(0);
-  }
-
-  50% {
-    transform: translate3d(1.2%, -1.6%, 0) rotate(.7deg);
-  }
-}
-
-@keyframes hero-doodles-drift-b {
-  0%, 100% {
-    transform: translate3d(0, 0, 0) rotate(0);
-  }
-
-  50% {
-    transform: translate3d(-1.4%, 1%, 0) rotate(-.55deg);
-  }
-}
-
-@keyframes hero-doodles-breathe {
-  0%, 100% {
-    opacity: .68;
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .cloud-site[data-surface="zebra"] .cloud-main > .author-hero[data-hero-cycle] {
     animation: 16s ease-in-out infinite hero-linked-colours;
@@ -15668,18 +15750,6 @@ body:has(.cloud-site[data-palette="vivid"]) {
 
   .cloud-site[data-surface="zebra"] .cloud-main > .author-hero[data-hero-cycle]:after {
     animation: 8s ease-in-out infinite alternate hero-cycle-right-drift;
-  }
-
-  .hero-doodles-layer-a {
-    animation: 24s ease-in-out infinite hero-doodles-drift-a;
-  }
-
-  .hero-doodles-layer-b {
-    animation: 29s ease-in-out infinite hero-doodles-drift-b;
-  }
-
-  .hero-doodles-layer-c {
-    animation: 11s ease-in-out infinite hero-doodles-breathe;
   }
 }
 
@@ -15747,24 +15817,735 @@ body:has(.cloud-site[data-palette="vivid"]) {
   }
 }
 
-@media (max-width: 760px) {
-  .hero-doodles {
-    opacity: .32;
-  }
-
-  .hero-doodles-layer {
-    stroke-width: 1.7px;
-  }
-
-  .hero-doodles-layer .hero-doodle-bold {
-    stroke-width: 4px;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .hero-cycle-pause {
     display: none;
   }
 }
 
-/*# sourceMappingURL=_1fm3_cohedc1e._.css.map*/</style></head><body><div hidden=""><!--$--><!--/$--></div><div class="form-variant-root" data-form-variant="a" data-form-base="a"><div data-site-variant="b" data-surface="zebra" data-body="rubik" data-hero="center" data-palette="vivid" data-photo="warm" data-scene="mist" class="cloud-site author-theme mood-lilac type-playfair "><main class="cloud-main"><section class="cloud-hero author-hero " data-hero-cycle="aurora" aria-labelledby="author-title-lilac"><svg class="hero-doodles" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true" focusable="false"><g class="hero-doodles-layer hero-doodles-layer-a"><path d="M92 176c34-29 62-25 83 1-30 10-53 30-79 55-8-19-9-37-4-56Z"></path><path d="M1460 170c29 13 49 36 54 69-28-8-58-5-91 10 3-31 15-57 37-79Z"></path><path d="M97 696c24-18 53-19 82-2-25 15-46 36-62 63-17-19-23-39-20-61Z"></path><path d="M1451 706c-27 15-48 39-63 70 31 0 59 9 82 28 7-35 0-68-19-98Z"></path><path d="M232 92l7 35m-20-16 38-5" class="hero-doodle-bold"></path><path d="M1325 102l4 26m-16-11 29-4"></path><path d="M129 428l26 5m-11-18-5 28"></path><path d="M1474 454l30-3m-17-13 3 27"></path><circle cx="312" cy="760" r="8"></circle><circle cx="1268" cy="710" r="6"></circle><circle cx="143" cy="318" r="5"></circle><circle cx="1465" cy="330" r="4"></circle></g><g class="hero-doodles-layer hero-doodles-layer-b"><path d="M286 260c18-28 47-39 72-21 18 14 11 37-13 46-29 11-49-2-35-20 16-21 49-3 37 21-13 26-57 30-85 9"></path><path d="M1300 250c-18-21-43-25-62-8-16 15-4 35 18 38 27 4 41-12 24-27-18-16-43 4-26 23 18 20 55 17 76-7"></path><path d="M246 590c17 11 30 26 38 45m-4-52c-10 18-21 31-35 40"></path><path d="M1336 595c-16 12-28 27-35 46m2-52c11 17 23 30 38 38"></path><path d="M424 128c18 5 30 17 37 35m-54-16c20-2 38 5 54 20"></path><path d="M1164 124c-17 6-28 18-34 36m52-18c-20-1-37 7-52 22"></path><circle cx="211" cy="532" r="3"></circle><circle cx="231" cy="549" r="3"></circle><circle cx="204" cy="562" r="2"></circle><circle cx="249" cy="568" r="2"></circle><circle cx="1386" cy="529" r="3"></circle><circle cx="1366" cy="548" r="2"></circle><circle cx="1394" cy="563" r="3"></circle><circle cx="1350" cy="570" r="2"></circle></g><g class="hero-doodles-layer hero-doodles-layer-c"><path d="M406 706c33-12 68-8 104 13"></path><path d="M1092 711c-34-14-70-10-107 11"></path><path d="M68 560c19-6 35-5 50 5" class="hero-doodle-bold"></path><path d="M1484 570c18-7 34-6 49 4" class="hero-doodle-bold"></path><circle cx="361" cy="189" r="2"></circle><circle cx="386" cy="201" r="2"></circle><circle cx="338" cy="210" r="2"></circle><circle cx="1224" cy="185" r="2"></circle><circle cx="1250" cy="197" r="2"></circle><circle cx="1205" cy="207" r="2"></circle></g></svg><div class="cloud-hero-top"><a class="hero-brand" aria-label="Матрица — главная" href="/katya-matrix/"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="8" y="8" width="24" height="24" rx="2" stroke="currentColor" stroke-width="1.8"></rect><rect x="8" y="8" width="24" height="24" rx="2" stroke="currentColor" stroke-width="1.8" transform="rotate(45 20 20)"></rect><circle cx="20" cy="20" r="3" fill="currentColor"></circle></svg><strong>матрица</strong><sup>®</sup></a><nav class="hero-nav" aria-label="Связь и вход"><a class="hero-social-link" href="https://www.instagram.com/kati.sokolova/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a><span class="hero-social-link is-disabled" role="img" aria-label="Telegram: ссылка появится позже"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 4.4 17.8 19c-.2 1-1 1.3-1.8.8l-4.1-3-2 1.9c-.2.2-.4.4-.8.4l.3-4.2 7.7-7c.3-.3-.1-.5-.5-.2L7.1 13.8 3 12.5c-.9-.3-.9-.9.2-1.3l16.1-6.2c.7-.3 1.4.2 1.2-.6Z" fill="currentColor"></path></svg></span><span class="hero-social-link is-disabled" role="img" aria-label="ВКонтакте: ссылка появится позже"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.2 7h3.2c.2 2.2 1.1 3.8 2.4 4.9V7h3v2.8c1.2-1.2 2.1-2.2 2.7-2.8h3.4c-.8 1.4-1.9 2.8-3.2 4.1 1.4 1 2.6 2.4 3.6 4.2h-3.5c-.8-1.3-1.8-2.3-3-3v3H11C7.2 15.3 4.8 12.5 4.2 7Z" fill="currentColor"></path></svg></span><a class="hero-code-link" href="#formats">У меня есть ключ</a></nav></div><div class="cloud-hero-copy"><h1 class="author-hero-title" id="author-title-lilac">Почему вы снова оказываетесь<br/>в той же точке?<br/><span><em>В деньгах, отношениях, реализации.</em></span></h1><div class="author-hero-description"><p>Иногда достаточно увидеть одну закономерность, чтобы понять, почему привычные шаги снова и снова приводят к тому же результату.</p><p>В разборе Матрицы судьбы я покажу, на чём держится ваша сила, откуда берутся повторяющиеся ситуации и что можно сделать по-другому уже сейчас.</p></div><a class="cloud-button" href="#formats">Разобраться в себе</a><small class="author-hero-note">Первый шаг: сообщение в Instagram. Платить сразу не нужно.</small></div><div class="cloud-hero-art"><figure class="author-portrait  author-portrait-violet author-portrait-shape-pebble"><div class="author-portrait-wash"></div><div class="author-portrait-loop" aria-hidden="true"></div><img src="/katya-matrix/assets/images/katya-shape-pebble-mist-light.png" width="1024" height="1280" alt="Автор проекта «Матрица» в цветной одежде" loading="eager"/></figure></div><div class="cloud-hero-bottom"><span>Разборы Матрицы судьбы · Екатерина Соколова</span><div class="author-hero-bottom-links"><a href="#process">Как проходит разбор <span>↓</span></a></div><nav class="hero-socials" aria-label="Социальные сети"><a class="hero-social-link" href="https://www.instagram.com/kati.sokolova/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a><span class="hero-social-link is-disabled" role="img" aria-label="Telegram: ссылка появится позже"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 4.4 17.8 19c-.2 1-1 1.3-1.8.8l-4.1-3-2 1.9c-.2.2-.4.4-.8.4l.3-4.2 7.7-7c.3-.3-.1-.5-.5-.2L7.1 13.8 3 12.5c-.9-.3-.9-.9.2-1.3l16.1-6.2c.7-.3 1.4.2 1.2-.6Z" fill="currentColor"></path></svg></span><span class="hero-social-link is-disabled" role="img" aria-label="ВКонтакте: ссылка появится позже"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.2 7h3.2c.2 2.2 1.1 3.8 2.4 4.9V7h3v2.8c1.2-1.2 2.1-2.2 2.7-2.8h3.4c-.8 1.4-1.9 2.8-3.2 4.1 1.4 1 2.6 2.4 3.6 4.2h-3.5c-.8-1.3-1.8-2.3-3-3v3H11C7.2 15.3 4.8 12.5 4.2 7Z" fill="currentColor"></path></svg></span></nav></div></section><div class="cloud-content-layer"><section id="about" class="about-section" data-about="profile" aria-labelledby="about-name"><div class="about-composition"><div class="about-intro"><div class="about-copy"><h3 id="about-name">Меня зовут Екатерина</h3><p class="about-lead">Я юрист и руководитель, поэтому люблю логику даже в Матрице судьбы.</p><p class="about-note">Для меня это способ посмотреть на себя со стороны: спокойно, честно и без мистики.</p><p class="about-note">Объясняю без сложных терминов: только понятные слова и примеры из жизни.</p><p class="about-note">Хорошая трактовка всегда узнаётся в вашей жизни, иначе это просто красивые слова.</p></div><div class="author-hero zebra-about-art about-portrait"><figure class="author-portrait  author-portrait-violet author-portrait-shape-pebble"><div class="author-portrait-wash"></div><div class="author-portrait-loop" aria-hidden="true"></div><img src="/katya-matrix/assets/images/katya-shape-pebble-mist-light.png" width="1024" height="1280" alt="Автор проекта «Матрица» в цветной одежде" loading="eager"/></figure></div></div><div class="about-principles"><div><h3>Что делаю</h3><ul><li><svg class="method-yes" aria-hidden="true" viewBox="0 0 20 20"><path d="m5.5 10 3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Считаю Матрицу по проверенной методике</li><li><svg class="method-yes" aria-hidden="true" viewBox="0 0 20 20"><path d="m5.5 10 3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Смотрю энергии в связке, как единую систему</li><li><svg class="method-yes" aria-hidden="true" viewBox="0 0 20 20"><path d="m5.5 10 3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Показываю сценарии, которые вы узнаете в своей жизни</li><li><svg class="method-yes" aria-hidden="true" viewBox="0 0 20 20"><path d="m5.5 10 3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Помогаю найти вопросы к себе и первые шаги</li></ul></div><div><h3>Мои границы</h3><ul><li><svg class="method-no" aria-hidden="true" viewBox="0 0 20 20"><path d="m7 7 6 6m0-6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Вместо предсказаний показываю, на что вы можете влиять уже сегодня</li><li><svg class="method-no" aria-hidden="true" viewBox="0 0 20 20"><path d="m7 7 6 6m0-6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Помогаю увидеть ваши денежные сценарии, за цифрами и инвестициями лучше идти к профессионалам</li><li><svg class="method-no" aria-hidden="true" viewBox="0 0 20 20"><path d="m7 7 6 6m0-6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Разбор даёт понимание, а глубокую проработку лучше доверить психологу</li><li><svg class="method-no" aria-hidden="true" viewBox="0 0 20 20"><path d="m7 7 6 6m0-6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Решения всегда остаются за вами</li></ul></div></div><blockquote class="about-quote">«<!-- -->Матрица когда-то помогла мне самой собрать жизнь заново, шаг за шагом. Теперь я помогаю в этом другим<!-- -->»</blockquote></div></section><div id="approach" class="zebra-approach-anchor" aria-hidden="true"></div><section class="cloud-formats-scene cloud-formats-scene-open" id="formats"><div class="cloud-formats"><div class="cloud-formats-track"><div class="offer-palette-preview" style="--money-bg:#edf6df;--money-ink:#354d25;--money-muted:#576d46;--money-accent:#47732d;--prime-bg:#ffe9e5;--prime-ink:#632f37;--prime-muted:#80545a;--prime-accent:#a34252;--year-bg:#e4f4f8;--year-ink:#244a55;--year-muted:#506c75;--year-accent:#286d82;--full-bg:#fff1d7;--full-ink:#514128;--full-muted:#766348;--full-accent:#896126"><div class="cloud-formats-heading"><h2>Какой вопрос сейчас важнее?</h2></div><div class="offer-grid offer-layout-subtitle offer-full-yellow offer-view-grid"><article class="offer-card offer-card-money"><div class="offer-card-main"><div class="offer-card-copy"><h3>Путь к деньгам</h3><span class="offer-kicker">01<!-- --> · <!-- -->ДЕНЬГИ И РЕШЕНИЯ</span><p class="offer-lead">Вы много вкладываете сил, а денег всё равно ровно столько же. Или они приходят и сразу утекают.</p><div class="offer-focus"><ul><li>Как я определяю цену своей работы?</li><li>Где я беру на себя лишнее?</li><li>Какие решения о деньгах я повторяю?</li></ul></div></div><div class="offer-art" aria-hidden="true"><img src="/katya-matrix/assets/images/products/money-01.png" alt="" width="1254" height="1254" loading="lazy"/></div></div><div class="offer-card-footer"><button class="offer-action money-modal-trigger" type="button" aria-haspopup="dialog">Хочу разобраться с деньгами<!-- --> <span aria-hidden="true">→</span></button></div></article><article class="offer-card offer-card-prime"><div class="offer-card-main"><div class="offer-card-copy"><h3>Твой прайм</h3><span class="offer-kicker">02<!-- --> · <!-- -->СИЛЬНЫЕ СТОРОНЫ</span><p class="offer-lead">Вы многое умеете, а когда рассказываете о себе, выходит «ну, так, ничего особенного».</p><div class="offer-focus"><ul><li>Какие мои качества уже помогают мне?</li><li>В каких условиях они раскрываются сильнее всего?</li><li>Что мешает мне видеть свою силу?</li></ul></div></div><div class="offer-art" aria-hidden="true"><img src="/katya-matrix/assets/images/products/consult-02.png" alt="" width="1254" height="1254" loading="lazy"/></div></div><div class="offer-card-footer"><button class="offer-action money-modal-trigger" type="button" aria-haspopup="dialog">Хочу увидеть свой прайм<!-- --> <span aria-hidden="true">→</span></button></div></article><article class="offer-card offer-card-year"><div class="offer-card-main"><div class="offer-card-copy"><h3>Прогноз на год</h3><span class="offer-kicker">03<!-- --> · <!-- -->ТЕМЫ ПЕРИОДА</span><p class="offer-lead">Планы на год есть. Хочется понять, куда вложить силы, а где лучше их поберечь.</p><div class="offer-focus"><ul><li>Какие возможности этого года мои?</li><li>Куда стоит направить силы?</li><li>С каким вопросом я вхожу в новый период?</li></ul></div></div><div class="offer-art" aria-hidden="true"><img src="/katya-matrix/assets/images/products/consult-01.png" alt="" width="1254" height="1254" loading="lazy"/></div></div><div class="offer-card-footer"><button class="offer-action money-modal-trigger" type="button" aria-haspopup="dialog">Хочу прогноз на год<!-- --> <span aria-hidden="true">→</span></button></div></article><article class="offer-card offer-card-full"><div class="offer-card-main"><div class="offer-card-copy"><h3>Полный разбор матрицы</h3><span class="offer-kicker">04<!-- --> · <!-- -->ЦЕЛОСТНАЯ КАРТИНА</span><p class="offer-lead">Деньги, отношения и работа кажутся отдельными историями. А сценарий, похоже, везде один и тот же.</p><div class="offer-focus"><ul><li>Что я повторяю в разных сферах жизни?</li><li>Как мои решения о деньгах связаны с отношениями и работой?</li><li>На что я могу опереться дальше?</li></ul></div></div><div class="offer-art" aria-hidden="true"><img src="/katya-matrix/assets/images/products/full-01.png" alt="" width="1254" height="1254" loading="lazy"/></div></div><div class="offer-card-footer"><button class="offer-action money-modal-trigger" type="button" aria-haspopup="dialog">Хочу полную картину<!-- --> <span aria-hidden="true">→</span></button></div></article></div></div></div></div></section><section class="cloud-process" id="process" aria-labelledby="process-title"><div class="cloud-process-intro"><div class="cloud-process-heading"><h2 id="process-title">Сначала схема.<br/><span>Потом — твоя история.</span></h2></div></div><div class="cloud-process-steps"><article><h3>Вопрос</h3><p>Пишешь мне, с чем хочешь разобраться, одним-двумя предложениями. Я подскажу, какой формат подойдёт.</p></article><article><h3>Расчёт</h3><p>Для расчёта нужна дата рождения. Я считаю схему и смотрю на несколько позиций сразу, а не на один «аркан под долларом».</p></article><article><h3>Разбор</h3><p>Ты получаешь разбор в согласованном формате. Это материал для размышления и вопросов к себе, а не прогноз.</p></article></div></section><section class="zebra-reviews" id="reviews" aria-labelledby="reviews-title"><h2 id="reviews-title">Отзывы</h2><div class="reviews-carousel"><div class="reviews-track" tabindex="0" role="group" aria-label="Отзывы, листайте вбок"><article class="review"><header><b>Имя</b><time>26 октября</time></header><p>Здесь будет настоящий отзыв клиента. Три-четыре строки живого текста: с чем человек пришёл, что заметил в разборе и что для него стало ясно. Пока это заглушка, чтобы оценить объём и ритм блока.</p></article><article class="review"><header><b>Имя</b><time>26 октября</time></header><p>Здесь будет настоящий отзыв клиента. Три-четыре строки живого текста: с чем человек пришёл, что заметил в разборе и что для него стало ясно. Пока это заглушка, чтобы оценить объём и ритм блока.</p></article><article class="review"><header><b>Имя</b><time>26 октября</time></header><p>Здесь будет настоящий отзыв клиента. Три-четыре строки живого текста: с чем человек пришёл, что заметил в разборе и что для него стало ясно. Пока это заглушка, чтобы оценить объём и ритм блока.</p></article><article class="review"><header><b>Имя</b><time>26 октября</time></header><p>Здесь будет настоящий отзыв клиента. Три-четыре строки живого текста: с чем человек пришёл, что заметил в разборе и что для него стало ясно. Пока это заглушка, чтобы оценить объём и ритм блока.</p></article><article class="review"><header><b>Имя</b><time>26 октября</time></header><p>Здесь будет настоящий отзыв клиента. Три-четыре строки живого текста: с чем человек пришёл, что заметил в разборе и что для него стало ясно. Пока это заглушка, чтобы оценить объём и ритм блока.</p></article></div><div class="reviews-arrows"><button type="button" aria-label="Назад">←</button><button type="button" aria-label="Дальше">→</button></div></div></section><section class="closing-faq" id="faq" aria-labelledby="faq-title"><header><h2 id="faq-title">Частые вопросы</h2></header><div class="closing-questions"><details><summary>Это предсказание?<i aria-hidden="true"></i></summary><p>Нет. Матрица здесь работает как символическая система для наблюдения за собой. Она подсказывает сценарии и вопросы, а решения остаются за тобой.</p></details><details><summary>Это научно?<i aria-hidden="true"></i></summary><p>Нет, это не научная диагностика, а символический метод. Я использую его, чтобы задавать вопросы и замечать повторяющиеся сценарии. Проверяй сама: узнаёшь ли ты себя в том, что услышала.</p></details><details><summary>Чем это отличается от разбора «по одному аркану»?<i aria-hidden="true"></i></summary><p>Я не читаю позиции по отдельности. Смотрю, как они связаны друг с другом и с твоим вопросом. Один и тот же образ в разных местах схемы значит разное.</p></details><details><summary>Что нужно, чтобы начать?<i aria-hidden="true"></i></summary><p>Написать мне, с чем хочешь разобраться. Для расчёта понадобится дата рождения. Остальное подскажу в переписке.</p></details><details><summary>Не знаю, какой разбор мне нужен.<i aria-hidden="true"></i></summary><p>Это нормально. Напиши, что сейчас не даёт покоя, одним-двумя предложениями. Я подскажу, какой формат подойдёт, и не стану предлагать больше, чем нужно.</p></details></div></section></div><footer class="closing-footer" id="contacts" data-footer="strip"><div class="closing-controls"><nav class="closing-switch offer-view-switch" aria-label="Вид футера"><a aria-current="page" href="/katya-matrix/">Полоса</a><a href="/katya-matrix/">Подпись</a><a href="/katya-matrix/">Открытка</a><a href="/katya-matrix/">Навигация</a><a href="/katya-matrix/">Колофон</a></nav></div><div class="closing-color"><div class="closing-content"><div class="closing-copy"><h2>Давай разбираться в себе вместе.</h2><p>Есть вопрос или хочется что-то обсудить? Напиши. Подскажу, какой формат подойдёт.</p></div><a class="cloud-button author-contact-button" href="https://www.instagram.com/kati.sokolova/" target="_blank" rel="noopener noreferrer">Написать автору <span>↗</span></a></div><div class="closing-baseline"><a class="closing-brand" aria-label="Матрица — на главную" href="/katya-matrix/">✳ матрица</a><span>Символы — повод. Решения — твои.</span></div></div></footer></main></div></div><!--$--><!--/$--></body></html>
+.hero-soft-transition {
+  z-index: 40;
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  isolation: isolate;
+  display: block;
+  position: fixed;
+  inset: -12vmax;
+  overflow: hidden;
+}
+
+.hero-soft-transition:before, .hero-soft-transition:after, .hero-soft-transition i {
+  content: "";
+  left: var(--hero-transition-x, 50vw);
+  top: var(--hero-transition-y, 50vh);
+  aspect-ratio: 1;
+  filter: blur(18px);
+  opacity: 0;
+  will-change: transform,opacity;
+  border-radius: 50%;
+  width: 22vmax;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(.04);
+}
+
+.hero-soft-transition:before {
+  background: color-mix(in srgb,var(--cycle-left, #a9ddd2) 82%,#fff);
+}
+
+.hero-soft-transition:after {
+  background: color-mix(in srgb,var(--cycle-right, #bfd0f0) 80%,#fff);
+}
+
+.hero-soft-transition i:first-child {
+  background: color-mix(in srgb,var(--cycle-accent, #276d79) 20%,#fff);
+  margin: -7vmax 0 0 -6vmax;
+}
+
+.hero-soft-transition i:last-child {
+  background: #fff;
+  margin: 5vmax 0 0 8vmax;
+}
+
+.hero-soft-transition.is-active {
+  visibility: visible;
+  animation: 1.05s cubic-bezier(.22, 1, .36, 1) both hero-soft-shell;
+}
+
+.hero-soft-transition.is-active:before {
+  animation: .92s cubic-bezier(.2, .72, .2, 1) both hero-soft-bloom;
+}
+
+.hero-soft-transition.is-active:after {
+  animation: .98s cubic-bezier(.2, .72, .2, 1) 40ms both hero-soft-bloom;
+}
+
+.hero-soft-transition.is-active i:first-child {
+  animation: .9s cubic-bezier(.2, .72, .2, 1) 80ms both hero-soft-bloom;
+}
+
+.hero-soft-transition.is-active i:last-child {
+  animation: .86s cubic-bezier(.2, .72, .2, 1) .14s both hero-soft-bloom;
+}
+
+@keyframes hero-soft-shell {
+  0% {
+    opacity: 0;
+  }
+
+  14%, 60% {
+    opacity: .92;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hero-soft-bloom {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.04);
+  }
+
+  18% {
+    opacity: .72;
+  }
+
+  72%, 100% {
+    opacity: .94;
+    transform: translate(-50%, -50%) scale(12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-soft-transition {
+    display: none;
+  }
+}
+
+/* [project]/app/lab/cloud/form-linked-cycle.css [app-client] (css) */
+.cloud-site-flow .cloud-form-shell[data-hero-cycle="aurora"] {
+  --left-1: #a9ddd2;
+  --right-1: #bfd0f0;
+  --accent-1: #276d79;
+  --left-2: #d7b6e7;
+  --right-2: #edb9d0;
+  --accent-2: #76508e;
+  --left-3: #b6d7ef;
+  --right-3: #aedbc9;
+  --accent-3: #3c6497;
+  --cycle-left: var(--left-1);
+  --cycle-right: var(--right-1);
+  --cycle-accent: var(--accent-1);
+  background: #f7fafc;
+}
+
+.cloud-site-flow .cloud-form-shell[data-hero-cycle="aurora"]:before, .cloud-site-flow .cloud-form-shell[data-hero-cycle="aurora"]:after {
+  content: "";
+  aspect-ratio: auto;
+  border-radius: inherit;
+  width: auto;
+  height: auto;
+  box-shadow: none;
+  opacity: 1;
+  filter: none;
+  pointer-events: none;
+  border: 0;
+  display: block;
+  position: absolute;
+  inset: 0;
+}
+
+.cloud-site-flow .cloud-form-shell[data-hero-cycle="aurora"]:before {
+  z-index: -2;
+  background: radial-gradient(ellipse 56% 70% at 8% 12%,var(--cycle-left),color-mix(in srgb,var(--cycle-left) 52%,#f7fafc) 35%,transparent 78%);
+  bottom: 0;
+  left: 0;
+}
+
+.cloud-site-flow .cloud-form-shell[data-hero-cycle="aurora"]:after {
+  z-index: -1;
+  background: radial-gradient(ellipse 52% 72% at 94% 88%,var(--cycle-right),color-mix(in srgb,var(--cycle-right) 52%,#f7fafc) 38%,transparent 80%);
+  bottom: 0;
+  left: 0;
+  transform: none;
+}
+
+.form-variant-root .cloud-site-flow .cloud-nav-flow {
+  width: min(800px, 100%);
+  height: 64px;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 40px;
+  transform: none;
+}
+
+.form-variant-root .cloud-site-flow .cloud-entry-stack {
+  gap: 20px;
+  transform: none;
+}
+
+.form-variant-root .cloud-site-flow .cloud-entry-shell {
+  overflow: auto;
+}
+
+.form-variant-root .cloud-site-flow .cloud-nav-flow .cloud-logo {
+  color: #242630;
+  letter-spacing: -1px;
+  gap: 8px;
+  font-size: 25px;
+  line-height: 1;
+}
+
+.form-variant-root .cloud-site-flow .cloud-nav-flow .cloud-logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+.form-variant-root .cloud-site-flow .cloud-nav-flow .cloud-logo > span {
+  margin-top: 7px;
+  font-size: 10px;
+}
+
+.form-variant-root .cloud-site-flow .cloud-form-shell[data-hero-cycle="aurora"] {
+  padding-top: 32px;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .lead {
+  max-width: none;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .stage-back {
+  appearance: none;
+  color: #6f6672;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 6px 0;
+  font: 600 14px / 1.4 PT Sans, Arial, sans-serif;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .card-top {
+  border: 0;
+  align-items: center;
+  min-height: 28px;
+  padding: 0;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .flow-step-count {
+  color: #6f6672;
+  font-variant-numeric: tabular-nums;
+  margin-left: auto;
+  font: 600 14px / 1.4 PT Sans, Arial, sans-serif;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .stage {
+  padding-top: 32px;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .email-card .card-top {
+  display: none;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .email-card .stage {
+  padding-top: 0;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .email-card .section-number {
+  margin-bottom: 18px;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .email-card .lead {
+  margin-bottom: 24px;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .email-card .consent, .cloud-site-flow .cloud-form-shell .cloud-live .email-card .delivery-actions {
+  margin-top: 18px;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .stage-back:hover {
+  color: #292631;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .stage-back:focus-visible {
+  outline: 2px solid var(--cycle-accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .flow-product {
+  display: none;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .options {
+  gap: 14px;
+}
+
+.cloud-site-flow .cloud-form-shell {
+  --flow-control-fill: #fbfbfc;
+  --flow-control-border: #dddbe2;
+  --flow-control-hover: #c8c4cd;
+  --flow-control-focus: color-mix(in srgb,var(--cycle-accent) 56%,#fff);
+  --flow-control-error: #b85f5f;
+  --flow-control-radius: 14px;
+  --flow-heading-font: "Cormorant Garamond","PT Serif",Georgia,serif;
+  --flow-body-font: "PT Sans",Arial,sans-serif;
+}
+
+.cloud-site-flow :is(.cloud-entry-card, .cloud-entry-action, .cloud-form-shell .cloud-live .shell) {
+  font-family: var(--flow-body-font);
+}
+
+.cloud-site-flow :is(.cloud-entry-copy h1, .cloud-form-shell .cloud-live .stage h1, .cloud-form-shell .cloud-live .stage h1.question-title) {
+  max-width: none;
+  font-family: var(--flow-heading-font);
+  letter-spacing: -.025em;
+  color: #292631;
+  text-wrap: pretty;
+  margin: 0 0 16px;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.08;
+}
+
+.cloud-site-flow .cloud-entry-copy h1 {
+  font-size: 42px;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .stage h1 br {
+  display: none;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .stage h1 em {
+  font: italic 600 1em/1.08 var(--flow-heading-font);
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .stage h1 em:before {
+  content: " ";
+}
+
+.cloud-site-flow :is(.cloud-entry-copy > p, .cloud-form-shell .cloud-live .lead) {
+  font: 400 16px/1.5 var(--flow-body-font);
+  color: #686370;
+}
+
+.cloud-site-flow :is(.cloud-entry-action label, .cloud-form-shell .cloud-live .field-label, .cloud-form-shell .cloud-live .date-grid label, .cloud-form-shell .cloud-live .identity-fieldset legend) {
+  font: 700 14px/1.4 var(--flow-body-font);
+}
+
+.cloud-site-flow :is(.cloud-entry-action input, .cloud-form-shell .cloud-live input, .cloud-form-shell .cloud-live textarea, .cloud-form-shell .cloud-live button) {
+  font-family: var(--flow-body-font);
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live :is(.section-number, .flow-stage-caption) {
+  font: 700 12px/1.4 var(--flow-body-font);
+  letter-spacing: .08em;
+}
+
+.cloud-site-flow :is(.cloud-entry-action input, .cloud-live .stage > input, .cloud-live .date-grid input, .cloud-live .context-input) {
+  border: 1px solid var(--flow-control-border);
+  border-radius: var(--flow-control-radius);
+  background: var(--flow-control-fill);
+  color: #292631;
+  box-shadow: none;
+  caret-color: var(--cycle-accent);
+  outline: none;
+  transition: border-color .2s, background .2s, box-shadow .2s;
+}
+
+.cloud-site-flow :is(.cloud-entry-action input, .cloud-live .stage > input, .cloud-live .date-grid input, .cloud-live .context-input):hover:not(:disabled) {
+  border-color: var(--flow-control-hover);
+  background: var(--flow-control-fill);
+}
+
+.cloud-site-flow :is(.cloud-entry-action input, .cloud-live .stage > input, .cloud-live .date-grid input, .cloud-live .context-input):focus {
+  border-color: var(--flow-control-focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb,var(--cycle-accent) 11%,transparent);
+  background: #fff;
+}
+
+.cloud-site-flow :is(.cloud-entry-action input, .cloud-live .stage > input, .cloud-live .date-grid input, .cloud-live .context-input):focus-visible {
+  outline-offset: 0;
+  outline: none;
+}
+
+.cloud-site-flow :is(.cloud-entry-action input, .cloud-live .stage > input, .cloud-live .date-grid input, .cloud-live .context-input)[aria-invalid="true"] {
+  border-color: var(--flow-control-error);
+  background: snow;
+  box-shadow: 0 0 0 3px #b85f5f0d;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .context-input {
+  border-radius: var(--flow-control-radius);
+  background: var(--flow-control-fill);
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .profile-card .profile-stage .identity-option {
+  border: 1px solid var(--flow-control-border);
+  border-radius: var(--flow-control-radius);
+  background: var(--flow-control-fill);
+  color: #292631;
+  box-shadow: none;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .profile-card .profile-stage .identity-option:hover {
+  border-color: var(--flow-control-hover);
+  background: var(--flow-control-fill);
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .profile-card .profile-stage .identity-option.selected {
+  border-color: var(--flow-control-focus);
+  background: color-mix(in srgb,var(--cycle-accent) 11%,#fff);
+  color: color-mix(in srgb,var(--cycle-accent) 72%,#292631);
+  box-shadow: none;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .profile-card .profile-stage .identity-option:has(input:focus-visible) {
+  box-shadow: 0 0 0 3px color-mix(in srgb,var(--cycle-accent) 11%,transparent);
+  outline: none;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .option {
+  border-color: var(--flow-control-border);
+  box-shadow: none;
+  background: #fff;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .option:not(.selected):hover:not(:disabled) {
+  background: #fbfafc;
+  border-color: #bbb6bf;
+  transform: none;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .option.selected {
+  background: color-mix(in srgb,var(--cycle-accent) 8%,#fff);
+  border-color: var(--flow-control-focus);
+  box-shadow: none;
+  cursor: default;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .option.selected:hover:not(:disabled) {
+  background: color-mix(in srgb,var(--cycle-accent) 8%,#fff);
+  border-color: var(--flow-control-focus);
+  box-shadow: none;
+  transform: none;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .option.selected .option-index {
+  color: #302d35;
+  font-weight: 700;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .radio-dot {
+  box-shadow: none;
+  background: #fff;
+  border: 1px solid #c9c5cd;
+  position: relative;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .option.selected .radio-dot {
+  border-width: 1px;
+  border-color: var(--cycle-accent);
+  box-shadow: none;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .option.selected .radio-dot:after {
+  content: "";
+  background: var(--cycle-accent);
+  border-radius: 50%;
+  position: absolute;
+  inset: 4px;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .summary-list, .cloud-site-flow .cloud-form-shell .cloud-live .summary-item {
+  width: 100%;
+  min-width: 0;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .summary-item > div {
+  flex: auto;
+  min-width: 0;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .summary-item {
+  align-items: flex-start;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .summary-item strong {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  white-space: normal;
+  max-width: 100%;
+  display: block;
+}
+
+.cloud-site-flow .cloud-form-shell .cloud-live .summary-item button {
+  flex: none;
+}
+
+.cloud-site-flow .cloud-entry-time {
+  background: color-mix(in srgb,var(--cycle-accent) 7%,#fff);
+  color: #5f5964;
+  border-radius: 14px;
+  gap: 5px;
+  margin-top: 22px;
+  padding: 16px 18px;
+  font: 400 14px / 1.5 PT Sans, Arial, sans-serif;
+  display: grid;
+}
+
+.cloud-site-flow .cloud-entry-time strong {
+  color: #292631;
+  font-size: 14px;
+}
+
+.cloud-site-flow .cloud-form-shell[data-hero-cycle="aurora"] :is(.cloud-entry-action .cloud-button, .cloud-live .primary) {
+  background: var(--cycle-accent);
+  color: #fff;
+  box-shadow: 0 8px 24px color-mix(in srgb,var(--cycle-accent) 14%,transparent);
+  border-color: #0000;
+  transition: background .25s, border-color .25s, box-shadow .25s, transform .25s;
+}
+
+.cloud-site-flow .cloud-form-shell[data-hero-cycle="aurora"] :is(.cloud-entry-action .cloud-button, .cloud-live .primary):hover:not(:disabled) {
+  background: color-mix(in srgb,var(--cycle-accent) 84%,#1f2025);
+  color: #fff;
+  box-shadow: 0 12px 28px color-mix(in srgb,var(--cycle-accent) 22%,transparent);
+  border-color: #0000;
+}
+
+.cloud-site-flow .cloud-form-shell[data-hero-cycle="aurora"] :is(.cloud-entry-action .cloud-button, .cloud-live .primary):disabled {
+  opacity: 1;
+  color: #918c95;
+  box-shadow: none;
+  cursor: not-allowed;
+  background: #f0eff2;
+  border: 1px solid #dfdce2;
+  transform: none;
+}
+
+.cloud-site-flow .cloud-form-shell[data-hero-cycle="aurora"] :is(.cloud-entry-action .cloud-button, .cloud-live .primary):disabled > span {
+  color: #96919a;
+  background: #e4e2e7;
+}
+
+.cloud-site-flow .cloud-form-shell :is(.cloud-entry-action .cloud-button, .cloud-live .primary) > span {
+  flex: 0 0 34px;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  font-size: 0;
+  line-height: 1;
+  display: grid;
+}
+
+.cloud-site-flow .cloud-form-shell :is(.cloud-entry-action .cloud-button, .cloud-live .primary) > span:before {
+  content: "→";
+  font: 400 20px / 1 PT Sans, Arial, sans-serif;
+  display: block;
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cloud-site-flow .cloud-form-shell[data-hero-cycle="aurora"] {
+    animation: 16s ease-in-out infinite hero-linked-colours;
+  }
+
+  .cloud-site-flow .cloud-form-shell[data-hero-cycle="aurora"]:before {
+    animation: 6.667s ease-in-out infinite alternate hero-cycle-left-drift;
+  }
+
+  .cloud-site-flow .cloud-form-shell[data-hero-cycle="aurora"]:after {
+    animation: 8s ease-in-out infinite alternate hero-cycle-right-drift;
+  }
+
+  .cloud-site-flow .cloud-entry-card {
+    animation: .58s cubic-bezier(.22, 1, .36, 1) both flow-card-soft-enter;
+  }
+
+  .cloud-site-flow .cloud-form-shell .cloud-live .stage {
+    animation: .5s cubic-bezier(.22, 1, .36, 1) both flow-stage-soft-enter;
+  }
+
+  .cloud-site-flow .cloud-form-shell .cloud-live .option, .cloud-site-flow .cloud-form-shell .cloud-live .summary-item {
+    animation: .46s cubic-bezier(.22, 1, .36, 1) both flow-item-soft-enter;
+  }
+
+  .cloud-site-flow .cloud-form-shell .cloud-live :is(.option, .summary-item):nth-child(2) {
+    animation-delay: 45ms;
+  }
+
+  .cloud-site-flow .cloud-form-shell .cloud-live :is(.option, .summary-item):nth-child(3) {
+    animation-delay: 90ms;
+  }
+
+  .cloud-site-flow .cloud-form-shell .cloud-live :is(.option, .summary-item):nth-child(4) {
+    animation-delay: .135s;
+  }
+}
+
+@keyframes flow-card-soft-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(.992);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes flow-stage-soft-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes flow-item-soft-enter {
+  from {
+    opacity: 0;
+    transform: translateY(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .form-variant-root .cloud-site-flow .cloud-form-shell {
+    align-content: start;
+    place-items: start stretch;
+    overflow: auto;
+  }
+
+  .form-variant-root .cloud-site-flow .cloud-flow-stack {
+    justify-content: flex-start;
+    min-height: auto;
+  }
+
+  .form-variant-root .cloud-site-flow .cloud-nav-flow {
+    width: 100%;
+    height: 64px;
+    padding-inline: 32px;
+  }
+
+  .form-variant-root .cloud-site-flow .cloud-entry-card {
+    border-radius: 28px;
+    width: 100%;
+    padding: 32px;
+  }
+
+  .form-variant-root .cloud-site-flow .cloud-entry-copy h1 {
+    white-space: normal;
+    font-size: clamp(38px, 5.4vw, 42px);
+  }
+
+  .form-variant-root .cloud-site-flow .cloud-form-shell .cloud-live .flow-card {
+    padding-inline: 32px;
+  }
+}
+
+@media (max-width: 760px) {
+  .form-variant-root .cloud-site-flow .cloud-entry-shell {
+    min-height: calc(100svh - 24px);
+    padding: max(16px,env(safe-area-inset-top)) 12px max(24px,env(safe-area-inset-bottom));
+    place-items: start stretch;
+  }
+
+  .form-variant-root .cloud-site-flow .cloud-nav-flow {
+    height: 64px;
+    padding-inline: 24px;
+  }
+
+  .form-variant-root .cloud-site-flow .cloud-entry-stack {
+    gap: 12px;
+  }
+
+  .form-variant-root .cloud-site-flow .cloud-form-shell[data-hero-cycle="aurora"] {
+    padding-top: 16px;
+  }
+
+  .cloud-site-flow .cloud-form-shell .cloud-live .options {
+    gap: 10px;
+  }
+
+  .cloud-site-flow .cloud-form-shell .cloud-live .stage {
+    padding-top: 24px;
+  }
+
+  .cloud-site-flow :is(.cloud-entry-copy h1, .cloud-form-shell .cloud-live .stage h1, .cloud-form-shell .cloud-live .stage h1.question-title) {
+    letter-spacing: -.02em;
+    font-size: 36px;
+    line-height: 1.08;
+  }
+}
+
+@media (max-width: 520px) {
+  .form-variant-root .cloud-site-flow .cloud-nav-flow {
+    height: 60px;
+    padding-inline: 20px;
+  }
+
+  .form-variant-root .cloud-site-flow .cloud-entry-card {
+    border-radius: 24px;
+    padding: 24px 20px 26px;
+  }
+
+  .form-variant-root .cloud-site-flow .cloud-entry-copy h1 {
+    font-size: 34px;
+    line-height: 1.08;
+  }
+
+  .form-variant-root .cloud-site-flow .cloud-entry-time {
+    margin-top: 20px;
+    padding: 14px 16px;
+  }
+
+  .form-variant-root .cloud-site-flow .cloud-entry-action {
+    margin-top: 24px;
+  }
+
+  .form-variant-root .cloud-site-flow .cloud-form-shell .cloud-live .flow-card {
+    padding-inline: 20px;
+  }
+
+  .form-variant-root .cloud-site-flow .cloud-form-shell .cloud-live .delivery-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .form-variant-root .cloud-site-flow .cloud-form-shell .cloud-live .summary-item {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+    display: grid;
+  }
+
+  .form-variant-root .cloud-site-flow .cloud-form-shell .cloud-live .summary-item button {
+    align-self: start;
+  }
+}
+
+@media (max-width: 370px) {
+  .form-variant-root .cloud-site-flow .cloud-nav-flow {
+    padding-inline: 20px;
+  }
+}
+
+/*# sourceMappingURL=_0zdjgz741q700._.css.map*/</style></head><body><div hidden=""><!--$--><!--/$--></div><div class="form-variant-root" data-form-variant="a" data-form-base="a"><div data-site-variant="b" data-surface="zebra" data-body="rubik" data-hero="center" data-palette="vivid" data-photo="warm" data-scene="mist" class="cloud-site author-theme mood-lilac type-playfair "><main class="cloud-main"><section class="cloud-hero author-hero " data-hero-cycle="aurora" aria-labelledby="author-title-lilac"><div class="cloud-hero-top"><a class="hero-brand" aria-label="Матрица — главная" href="/katya-matrix/"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><rect x="8" y="8" width="24" height="24" rx="2" stroke="currentColor" stroke-width="1.8"></rect><rect x="8" y="8" width="24" height="24" rx="2" stroke="currentColor" stroke-width="1.8" transform="rotate(45 20 20)"></rect><circle cx="20" cy="20" r="3" fill="currentColor"></circle></svg><strong>матрица</strong><sup>®</sup></a><nav class="hero-nav" aria-label="Связь и вход"><a class="hero-social-link" href="https://www.instagram.com/kati.sokolova/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a><span class="hero-social-link is-disabled" role="img" aria-label="Telegram: ссылка появится позже"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 4.4 17.8 19c-.2 1-1 1.3-1.8.8l-4.1-3-2 1.9c-.2.2-.4.4-.8.4l.3-4.2 7.7-7c.3-.3-.1-.5-.5-.2L7.1 13.8 3 12.5c-.9-.3-.9-.9.2-1.3l16.1-6.2c.7-.3 1.4.2 1.2-.6Z" fill="currentColor"></path></svg></span><span class="hero-social-link is-disabled" role="img" aria-label="ВКонтакте: ссылка появится позже"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.2 7h3.2c.2 2.2 1.1 3.8 2.4 4.9V7h3v2.8c1.2-1.2 2.1-2.2 2.7-2.8h3.4c-.8 1.4-1.9 2.8-3.2 4.1 1.4 1 2.6 2.4 3.6 4.2h-3.5c-.8-1.3-1.8-2.3-3-3v3H11C7.2 15.3 4.8 12.5 4.2 7Z" fill="currentColor"></path></svg></span><a class="hero-code-link" href="/katya-matrix/money/">У меня есть ключ</a></nav></div><div class="cloud-hero-copy"><h1 class="author-hero-title" id="author-title-lilac">Почему вы снова оказываетесь<br/>в той же точке?<br/><span><em>В деньгах, отношениях, реализации.</em></span></h1><div class="author-hero-description"><p>Иногда достаточно увидеть одну закономерность, чтобы понять, почему привычные шаги снова и снова приводят к тому же результату.</p><p>В разборе Матрицы судьбы я покажу, на чём держится ваша сила, откуда берутся повторяющиеся ситуации и что можно сделать по-другому уже сейчас.</p></div><a class="cloud-button" href="#formats">Разобраться в себе</a><span class="hero-soft-transition" aria-hidden="true"><i></i><i></i></span><small class="author-hero-note">Первый шаг: сообщение в Instagram. Платить сразу не нужно.</small></div><div class="cloud-hero-art"><figure class="author-portrait  author-portrait-violet author-portrait-shape-pebble"><div class="author-portrait-wash"></div><div class="author-portrait-loop" aria-hidden="true"></div><img src="/katya-matrix/assets/images/katya-shape-pebble-mist-light.png" width="1024" height="1280" alt="Автор проекта «Матрица» в цветной одежде" loading="eager"/></figure></div><div class="cloud-hero-bottom"><span>Разборы Матрицы судьбы · Екатерина Соколова</span><div class="author-hero-bottom-links"><a href="#process">Как проходит разбор <span>↓</span></a></div><nav class="hero-socials" aria-label="Социальные сети"><a class="hero-social-link" href="https://www.instagram.com/kati.sokolova/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"></rect><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a><span class="hero-social-link is-disabled" role="img" aria-label="Telegram: ссылка появится позже"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 4.4 17.8 19c-.2 1-1 1.3-1.8.8l-4.1-3-2 1.9c-.2.2-.4.4-.8.4l.3-4.2 7.7-7c.3-.3-.1-.5-.5-.2L7.1 13.8 3 12.5c-.9-.3-.9-.9.2-1.3l16.1-6.2c.7-.3 1.4.2 1.2-.6Z" fill="currentColor"></path></svg></span><span class="hero-social-link is-disabled" role="img" aria-label="ВКонтакте: ссылка появится позже"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.2 7h3.2c.2 2.2 1.1 3.8 2.4 4.9V7h3v2.8c1.2-1.2 2.1-2.2 2.7-2.8h3.4c-.8 1.4-1.9 2.8-3.2 4.1 1.4 1 2.6 2.4 3.6 4.2h-3.5c-.8-1.3-1.8-2.3-3-3v3H11C7.2 15.3 4.8 12.5 4.2 7Z" fill="currentColor"></path></svg></span></nav></div></section><div class="cloud-content-layer"><section id="about" class="about-section" data-about="profile" aria-labelledby="about-name"><div class="about-composition"><div class="about-intro"><div class="about-copy"><h3 id="about-name">Меня зовут Екатерина</h3><blockquote class="about-quote">«<!-- -->Матрица когда-то помогла мне самой собрать жизнь заново, шаг за шагом. Теперь я помогаю в этом другим<!-- -->»</blockquote><p class="about-lead">Я юрист и руководитель, поэтому люблю логику даже в Матрице судьбы.</p><p class="about-note">Для меня это способ посмотреть на себя со стороны: спокойно, честно и без мистики.</p><p class="about-note">Объясняю без сложных терминов: только понятные слова и примеры из жизни.</p><p class="about-note">Хорошая трактовка всегда узнаётся в вашей жизни, иначе это просто красивые слова.</p></div><div class="author-hero zebra-about-art about-portrait"><figure class="author-portrait  author-portrait-violet author-portrait-shape-pebble"><div class="author-portrait-wash"></div><div class="author-portrait-loop" aria-hidden="true"></div><img src="/katya-matrix/assets/images/katya-shape-pebble-mist-light.png" width="1024" height="1280" alt="Автор проекта «Матрица» в цветной одежде" loading="eager"/></figure></div></div><div class="about-principles"><div><h3>Что делаю</h3><ul><li><svg class="method-yes" aria-hidden="true" viewBox="0 0 20 20"><path d="m5.5 10 3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Считаю Матрицу по проверенной методике</li><li><svg class="method-yes" aria-hidden="true" viewBox="0 0 20 20"><path d="m5.5 10 3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Смотрю энергии в связке, как единую систему</li><li><svg class="method-yes" aria-hidden="true" viewBox="0 0 20 20"><path d="m5.5 10 3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Показываю сценарии, которые вы узнаете в своей жизни</li><li><svg class="method-yes" aria-hidden="true" viewBox="0 0 20 20"><path d="m5.5 10 3 3 6-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Помогаю найти вопросы к себе и первые шаги</li></ul></div><div><h3>Мои границы</h3><ul><li><svg class="method-no" aria-hidden="true" viewBox="0 0 20 20"><path d="m7 7 6 6m0-6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Вместо предсказаний показываю, на что вы можете влиять уже сегодня</li><li><svg class="method-no" aria-hidden="true" viewBox="0 0 20 20"><path d="m7 7 6 6m0-6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Помогаю увидеть ваши денежные сценарии, за цифрами и инвестициями лучше идти к профессионалам</li><li><svg class="method-no" aria-hidden="true" viewBox="0 0 20 20"><path d="m7 7 6 6m0-6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Разбор даёт понимание, а глубокую проработку лучше доверить психологу</li><li><svg class="method-no" aria-hidden="true" viewBox="0 0 20 20"><path d="m7 7 6 6m0-6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>Решения всегда остаются за вами</li></ul></div></div></div></section><div id="approach" class="zebra-approach-anchor" aria-hidden="true"></div><section class="cloud-process" id="process" aria-labelledby="process-title"><div class="cloud-process-intro"><div class="cloud-process-heading"><h2 id="process-title">Сначала схема.<br/><span><em>Потом ваша история.</em></span></h2></div></div><div class="cloud-process-steps"><article><h3>Вопрос</h3><p>Вы пишете мне в одном-двух предложениях, с чем хотите разобраться. Я подскажу, какой разбор подойдёт лучше всего.</p></article><article><h3>Расчёт</h3><p>Для расчёта нужна только дата рождения. Я считаю матрицу и смотрю на несколько позиций в связке, потому что одна энергия показывает лишь часть картины.</p></article><article><h3>Разбор</h3><p>Вы получаете разбор в красиво оформленном PDF. Это материал, к которому можно возвращаться, задавать себе вопросы и находить свои ответы.</p></article></div></section><section class="cloud-formats-scene cloud-formats-scene-open" id="formats"><div class="cloud-formats"><div class="cloud-formats-track"><div class="offer-palette-preview" style="--money-bg:#e2f3e7;--money-ink:#1f4c36;--money-muted:#4d6d5b;--money-accent:#347b56;--prime-bg:#ffe9e5;--prime-ink:#632f37;--prime-muted:#80545a;--prime-accent:#a34252;--year-bg:#e4f4f8;--year-ink:#244a55;--year-muted:#506c75;--year-accent:#286d82;--full-bg:#fff1d7;--full-ink:#514128;--full-muted:#766348;--full-accent:#896126;--zebra-card-radius:42px"><div class="cloud-formats-heading"><h2>Какой вопрос сейчас важнее?</h2></div><div class="offer-grid offer-layout-subtitle offer-full-yellow offer-view-grid"><article class="offer-card offer-card-money"><div class="offer-card-main"><div class="offer-card-copy"><h3>Путь к деньгам</h3><span class="offer-kicker">01<!-- --> · <!-- -->ДЕНЬГИ И РЕШЕНИЯ</span><p class="offer-lead">Вы много вкладываете сил, а денег всё равно ровно столько же. Или они приходят и сразу утекают.</p><div class="offer-focus"><ul><li>Как я определяю цену своей работы?</li><li>Где я беру на себя лишнее?</li><li>Какие решения о деньгах я повторяю?</li></ul></div></div><div class="offer-art" aria-hidden="true"><img src="/katya-matrix/assets/images/products/money-01.png" alt="" width="1254" height="1254" loading="lazy"/></div></div><div class="offer-card-footer"><button class="offer-action money-modal-trigger" type="button" aria-haspopup="dialog">Хочу разобраться с деньгами<!-- --> <span aria-hidden="true">→</span></button></div></article><article class="offer-card offer-card-prime"><div class="offer-card-main"><div class="offer-card-copy"><h3>Твой прайм</h3><span class="offer-kicker">02<!-- --> · <!-- -->СИЛЬНЫЕ СТОРОНЫ</span><p class="offer-lead">Вы многое умеете, а когда рассказываете о себе, выходит «ну, так, ничего особенного».</p><div class="offer-focus"><ul><li>Какие мои качества уже помогают мне?</li><li>В каких условиях они раскрываются сильнее всего?</li><li>Что мешает мне видеть свою силу?</li></ul></div></div><div class="offer-art" aria-hidden="true"><img src="/katya-matrix/assets/images/products/consult-02.png" alt="" width="1254" height="1254" loading="lazy"/></div></div><div class="offer-card-footer"><button class="offer-action money-modal-trigger" type="button" aria-haspopup="dialog">Хочу увидеть свой прайм<!-- --> <span aria-hidden="true">→</span></button></div></article><article class="offer-card offer-card-year"><div class="offer-card-main"><div class="offer-card-copy"><h3>Прогноз на год</h3><span class="offer-kicker">03<!-- --> · <!-- -->ТЕМЫ ПЕРИОДА</span><p class="offer-lead">Планы на год есть. Хочется понять, куда вложить силы, а где лучше их поберечь.</p><div class="offer-focus"><ul><li>Какие возможности этого года мои?</li><li>Куда стоит направить силы?</li><li>С каким вопросом я вхожу в новый период?</li></ul></div></div><div class="offer-art" aria-hidden="true"><img src="/katya-matrix/assets/images/products/consult-01.png" alt="" width="1254" height="1254" loading="lazy"/></div></div><div class="offer-card-footer"><button class="offer-action money-modal-trigger" type="button" aria-haspopup="dialog">Хочу прогноз на год<!-- --> <span aria-hidden="true">→</span></button></div></article><article class="offer-card offer-card-full"><div class="offer-card-main"><div class="offer-card-copy"><h3>Полный разбор матрицы</h3><span class="offer-kicker">04<!-- --> · <!-- -->ЦЕЛОСТНАЯ КАРТИНА</span><p class="offer-lead">Деньги, отношения и работа кажутся отдельными историями. А сценарий, похоже, везде один и тот же.</p><div class="offer-focus"><ul><li>Что я повторяю в разных сферах жизни?</li><li>Как мои решения о деньгах связаны с отношениями и работой?</li><li>На что я могу опереться дальше?</li></ul></div></div><div class="offer-art" aria-hidden="true"><img src="/katya-matrix/assets/images/products/full-01.png" alt="" width="1254" height="1254" loading="lazy"/></div></div><div class="offer-card-footer"><button class="offer-action money-modal-trigger" type="button" aria-haspopup="dialog">Хочу полную картину<!-- --> <span aria-hidden="true">→</span></button></div></article></div></div></div></div></section><section class="zebra-reviews" id="reviews" aria-labelledby="reviews-title"><div class="reviews-heading"><h2 id="reviews-title">Отзывы</h2><div class="reviews-arrows"><button type="button" aria-label="Назад">←</button><button type="button" aria-label="Дальше">→</button></div></div><div class="reviews-carousel"><div class="reviews-track" tabindex="0" role="group" aria-label="Отзывы, листайте вбок"><article class="review"><header><b>ИМЯ</b><span>01 · ДЕНЬГИ И РЕШЕНИЯ</span></header><p>Катя, привет! У меня просто озарение 😅 Там, где я думала, что это обычная черта моего характера, оказалось, что именно это меня и тормозит в деньгах. И главное, теперь я понимаю, что с этим делать. Спасибо тебе большое ❤️</p></article><article class="review"><header><b>ИМЯ</b><span>02 · СИЛЬНЫЕ СТОРОНЫ</span></header><p>Я прочитала и поняла, что вообще себя с другой стороны увидела. Некоторые свои качества я всегда считала недостатками, а тут оказывается, их можно совсем по-другому использовать. Даже немного обидно, что раньше на это так не смотрела 😂</p></article><article class="review"><header><b>ИМЯ</b><span>04 · ЦЕЛОСТНАЯ КАРТИНА</span></header><p>Кать, привет! Информации очень много, есть над чем подумать. Особенно впечатлил раздел про карму. Там вообще всё в точку, прям моя ситуация по жизни. Буду пробовать применять рекомендации. Мне очень зашло, конечно! Спасибо</p></article><article class="review"><header><b>ИМЯ</b><span>03 · ТЕМЫ ПЕРИОДА</span></header><p>Спасибо большое за прогноз! Я сначала думала, что там будет просто описание года, а оказалось, столько всего про разные сферы. Особенно понравилось, что расписаны и плюсы, и минусы, и что с этим делать. Теперь хотя бы понимаю, на что обратить внимание в следующем году 🙏</p></article><article class="review"><header><b>ИМЯ</b><span>04 · ЦЕЛОСТНАЯ КАРТИНА</span></header><p>Короче, я некоторые моменты перечитала раза по три 😂 Особенно про то, как я сама себе всё усложняю. Мужу даже показала, он посмеялся и сказал, что это прям про меня. Есть над чем работать, конечно. Спасибо, что всё объяснила нормальным человеческим языком! 🔥</p></article></div></div></section><section class="closing-faq" id="faq" aria-labelledby="faq-title"><header><h2 id="faq-title">Частые вопросы</h2></header><div class="closing-questions"><details><summary>Это предсказание?<i aria-hidden="true"></i></summary><div class="faq-answer"><p>Матрица судьбы помогает посмотреть на возможные жизненные сценарии, сильные стороны и зоны, которые требуют внимания.</p><p>Ты получаешь рекомендации, которые можешь применить в жизни, а не готовый сценарий будущего. Решения и действия всегда остаются за тобой.</p></div></details><details><summary>Это научно?<i aria-hidden="true"></i></summary><div class="faq-answer"><p>Матрица судьбы относится к эзотерическим методам самопознания и не имеет научного подтверждения.</p><p>Я использую её как дополнительный инструмент для размышления о себе, своих привычках, отношениях и жизненных выборах.</p><p>Главная ценность разбора для тебя в возможности посмотреть на свою ситуацию под другим углом и найти новые идеи для действий.</p></div></details><details><summary>Чем это отличается от разбора «по одному аркану»?<i aria-hidden="true"></i></summary><div class="faq-answer"><p>Один аркан раскрывает лишь отдельную тему, а персональный разбор помогает увидеть более целостную картину.</p><p>Я сопоставляю разные позиции Матрицы, обращаю внимание на повторяющиеся темы и объясняю, как они могут проявляться именно в твоём запросе.</p><p>В результате ты получаешь связный разбор с понятными выводами и рекомендациями, а не набор разрозненных трактовок.</p></div></details><details><summary>Что нужно, чтобы начать?<i aria-hidden="true"></i></summary><div class="faq-answer"><p>Для расчёта Матрицы понадобится твоя дата рождения.</p><p>После оформления заказа ты получишь инструкции по дальнейшим шагам. Я подготовлю персональный разбор в соответствии с выбранной услугой.</p></div></details><details><summary>Не знаю, какой разбор мне нужен<i aria-hidden="true"></i></summary><div class="faq-answer"><p>Начни с того, что сейчас волнует тебя больше всего.</p><p>Если хочется разобраться с доходом и финансовыми привычками, подойдёт денежный разбор.</p><p>Если интересует личная реализация и сильные стороны, обрати внимание на «Твой Прайм».</p><p>Если хочешь понять основные темы предстоящего года, выбирай «Прогноз на год».</p><p>А если хочется посмотреть на разные сферы жизни в комплексе, выбирай полный разбор Матрицы.</p><p>Можешь просто написать мне, что сейчас происходит в твоей жизни и с чем хочется разобраться. Я помогу подобрать подходящий формат.</p></div></details></div></section></div><footer class="closing-footer" id="contacts" data-footer="imprint"><div class="closing-color"><div class="closing-content"><div class="closing-copy"><h2>Что сейчас хочется изменить в жизни?</h2><p class="closing-lead">Деньги, отношения, реализация или ситуация, которая повторяется снова и снова?</p><p>Расскажите, что вас волнует. Я помогу подобрать разбор под ваш запрос, чтобы вы получили понятные выводы и рекомендации для дальнейших действий.</p><nav class="closing-contacts" aria-label="Написать автору"><a class="cloud-button author-contact-button" href="https://www.instagram.com/kati.sokolova/" target="_blank" rel="noopener noreferrer">Подобрать разбор <span>↗</span></a></nav></div></div></div></footer></main></div></div><!--$--><!--/$--></body></html>
