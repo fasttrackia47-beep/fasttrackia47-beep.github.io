@@ -4,6 +4,7 @@
  const params=new URLSearchParams(location.search);
  const token=(params.get('token')||'').trim();
  const isPreview=(location.hostname==='127.0.0.1'||location.hostname==='localhost')&&token==='preview';
+ const previewStage=params.get('previewStage');
  const questions=[
   {id:'q1',title:'Что вам сейчас особенно важно прояснить?',description:'Опишите главный вопрос, с которым вы приходите в этот разбор.',min:20,max:600,placeholder:'Расскажите, что сейчас волнует вас больше всего…'},
   {id:'q2',title:'Расскажите немного о своей ситуации',description:'Добавьте детали и контекст — не менее 100 символов.',min:100,max:1200,placeholder:'Что происходит сейчас, что уже пробовали и к какому результату хотите прийти?'},
@@ -33,7 +34,13 @@
  function isoDate(){return `${state.year}-${state.month.padStart(2,'0')}-${state.day.padStart(2,'0')}`}
  function validDate(){const d=Number(state.day),m=Number(state.month),y=Number(state.year),date=new Date(Date.UTC(y,m-1,d)),now=new Date();return d>0&&m>0&&/^\d{4}$/.test(state.year)&&y>=1920&&y<=now.getFullYear()&&date.getUTCDate()===d&&date.getUTCMonth()+1===m&&date.getUTCFullYear()===y&&date<=now}
  async function checkToken(){
-  if(isPreview){state.stage='gate';render();return}
+  if(isPreview){
+   state.day='11';state.month='11';state.year='1990';
+   state.answers={q1:'Хочу лучше понять, куда направить внимание в ближайшее время.',q2:'Сейчас я нахожусь в точке перемен и хочу внимательнее разобраться в своих решениях, повторяющихся ситуациях и возможностях для следующего шага.',q3:'Хочу получить ясные ориентиры и вопросы, которые помогут увидеть ситуацию шире.'};
+   state.stage=['summary','sending','submitError','final'].includes(previewStage||'')?previewStage:'gate';
+   if(state.stage==='submitError')state.error='Не удалось отправить анкету. Проверьте интернет и попробуйте ещё раз.';
+   render();return;
+  }
   if(!token){state.stage='blocked';state.message='Ссылка недействительна';render();return}
   try{
    const response=await fetch(`${api}/status?token=${encodeURIComponent(token)}`);
