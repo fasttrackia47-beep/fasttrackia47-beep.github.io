@@ -16,6 +16,7 @@
  const error=()=>state.error?`<p class="error" role="alert">${escape(state.error)}</p>`:'';
  const statusScreen=(title,message)=>frame(`<h1>${escape(title)}</h1><p class="lead">${escape(message)}</p>`,'');
  function render(){
+  document.body.dataset.stage=state.stage;
   root.classList.toggle('gate',state.stage==='gate'||state.stage==='loading'||state.stage==='blocked');
   document.body.classList.toggle('plain-outcome',state.stage==='final'||state.stage==='blocked');
   root.classList.toggle('outcome-card',state.stage==='final'||state.stage==='blocked');
@@ -39,7 +40,8 @@
   if(isPreview){
    state.day='11';state.month='11';state.year='1990';
    state.answers={q1:'Хочу лучше понять, куда направить внимание в ближайшее время.',q2:'Сейчас я нахожусь в точке перемен и хочу внимательнее разобраться в своих решениях, повторяющихся ситуациях и возможностях для следующего шага.',q3:'Хочу получить ясные ориентиры и вопросы, которые помогут увидеть ситуацию шире.'};
-   state.stage=['summary','sending','submitError','final'].includes(previewStage||'')?previewStage:'gate';
+   state.stage=['gate','date','question','summary','sending','submitError','final'].includes(previewStage||'')?previewStage:'gate';
+   state.question=Math.min(questions.length-1,Math.max(0,Number(params.get('previewQuestion'))||0));
    if(state.stage==='submitError')state.error='Не удалось отправить анкету. Проверьте интернет и попробуйте ещё раз.';
    render();return;
   }
